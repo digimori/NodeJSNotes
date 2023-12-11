@@ -1,12 +1,13 @@
-const fs = require("fs");
+// var generateName = require("sillyname");
 
-/*fs.writeFile("message.txt", "Hello from NodeJS", (err) => {
-    if (err) throw err; // If an error occurs, throw the error to the console
-    console.log("The file has been saved!"); // Else, save the file with the data provided.
-});
-*/
+import generateName from "sillyname"; // This is the ECMA version of the above require()
+import superheroes from "superheroes";
 
-fs.readFile("./message.txt", "utf8", (err, data) => {
-    if(err) throw err;
-    console.log(data)
-})
+var sillyname = generateName();
+
+console.log(`My name is ${sillyname}.`)
+
+// Challenge: superheroes package - Install the package and console.log() your superhero name:
+
+superheroes.all;
+console.log(`My superhero name is ${superheroes.random()}!`)

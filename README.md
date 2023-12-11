@@ -68,5 +68,50 @@ fs.writeFile("message.txt", "Hello from NodeJS", (err) => {
 ```
 
 - Reading from files (Challenge) - Read the text from the file created above and console log it:
+```
+fs.readFile("./message.txt", "utf8", (err, data) => {
+    if(err) throw err;
+    console.log(data)
+})
+```
+- utf8 is needed here otherwise it will process as a buffer code instead
+
+## NPM (Node Package Manager):
+- Imports and utilities that other people have written to make writing code faster (Like a community tool library)
+
+### To initialise it:
+```
+npm init
+```
+
+- Then we need to create the package.json file by answering the questions provided:
+    - package name: learning-npm (Can be any name)
+    - version: Leave as is (hit enter)
+    - description: Whatever it needs to be
+    - entry point: (filename.js)
+    - test command: leave empty for this one
+    - git repository: empty
+    - keywords: empty
+    - author: your name?
+    - License: "ISC"
+  - Hit y and enter to save this when prompted
+
+### Installing packages:
+```
+npm install <package-name>
+```
+
+- Can be found on [npmJS](https://npmjs.com)
+
+- In node_modules, the index.js file will usually have the functionalities, methods and what they do.
 
 
+## ECMAScript Modules:
+- require() isn't used as much anymore in ECMA, it's usually like Django and React with:
+```
+import * as <variableName> from 'package';
+```
+- We need to initialize this in our package.json dependencies if creating from scratch like we did above:
+```
+"type": "module",
+```
